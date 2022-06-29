@@ -1,6 +1,6 @@
-package com.example.ecsite.entity;
+package com.example.ecsite.model.entity;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,17 +27,6 @@ public class Goods {
 	@Column(name="updated_at")
 	private Timestamp updatedAt;
 	
-	public Goods() {
-	}
-
-	public Goods(long id, String goodsName, String price, Timestamp updatedAt) {
-		super();
-		this.id = id;
-		this.goodsName = goodsName;
-		this.price = price;
-		this.updatedAt = updatedAt;
-	}
-
 	public long getId() {
 		return id;
 	}

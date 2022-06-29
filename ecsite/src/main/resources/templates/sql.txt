@@ -1,0 +1,43 @@
+create database ecsite;
+
+//user table
+create table user(
+id int(11) not null primary key auto_increment,
+user_name varchar(25) not null,
+password varchar(25) not null,
+full_name varchar(50) not null,
+is_admin tinyint(1) not null default 0);
+
+insert into user(user_name,password,full_name)
+values('taro','taropw','Taro Yamada');
+insert into user(user_name,password,full_name)
+values('jiro','jiropw','Jiro Tanaka');
+insert into user(user_name,password,full_name)
+values('ichiko','ichikopw','Ichiko Hayashi');
+insert into user(user_name,password,full_name)
+values('admin','admin','管理者　太郎');
+
+//goods table
+create table goods(
+id int(11) not null primary key auto_increment,
+goods_name varchar(255) not null,
+price int(11) default 0,
+updated_at timestamp not null default now() on update now());
+
+insert into goods(goods_name,price)
+values('Tシャツ',1000);
+insert into goods(goods_name,price)
+values('ジャケット',10000);
+insert into goods(goods_name,price)
+values('スニーカー',5000);
+
+
+//purchase table
+create table purchase(
+id int(11) not null primary key auto_increment,
+user_id int(11) not null,
+goods_id int(11) not null,
+goods_name varchar(255) not null,
+item_count int(11) default 0,
+total int(11) default 0,
+create_at datetime not null);

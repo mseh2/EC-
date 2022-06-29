@@ -1,4 +1,4 @@
-package com.example.ecsite.entity;
+package com.example.ecsite.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
