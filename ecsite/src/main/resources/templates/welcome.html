@@ -3,6 +3,38 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+		<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script>
+		$(() => {
+			$('.deleteBtn').on('click',(event) =>{
+				event.preventDefault();
+				let tdList = $(event.target).parent().parent().find('td');
+				
+				let id = $(tdList[0]).text();
+				let jsonString = {
+						'id' :id,
+						'goodsName':$(tdList[1]).text(),
+						'price':''
+				};
+				$.ajax({
+					type:'POST',
+					url: '/ecsite/admin/api/deleteGoods',
+					data:JSON.stringify(jsonString),
+					contentType:'application/json',
+					scriptCharset:'utf-8'
+				})
+				.then((result) => {
+					console.log(result);
+					/*${}テンプレートリテラルは「`」バッククオートで囲む*/
+					alert(`商品[ ${jsonString.goodsName} ]を削除しました。`);
+					$(tdList).parent().remove();
+				}, () => {
+					console.error('Error: ajax connection failed.');
+				});				
+			});
+		});				
+		</script>				
+		
 		<title>ECサイト</title>
 	</head>
 	<body>

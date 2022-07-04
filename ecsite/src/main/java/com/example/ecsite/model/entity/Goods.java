@@ -22,7 +22,7 @@ public class Goods {
 	private String goodsName;
 	
 	@Column(name="price")
-	private String price;
+	private long price;
 	
 	@Column(name="updated_at")
 	private Timestamp updatedAt;
@@ -43,11 +43,11 @@ public class Goods {
 		this.goodsName = goodsName;
 	}
 
-	public String getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(long price) {
 		this.price = price;
 	}
 
