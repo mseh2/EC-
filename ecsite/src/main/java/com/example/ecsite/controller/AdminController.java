@@ -17,7 +17,7 @@ import com.example.ecsite.model.entity.User;
 import com.example.ecsite.model.form.GoodsForm;
 import com.example.ecsite.model.form.LoginForm;
 
-//トップ：http://localhost:8080/ecsite/admin/
+//Adminトップ：http://localhost:8080/ecsite/admin/
 
 @Controller
 @RequestMapping("/ecsite/admin")
