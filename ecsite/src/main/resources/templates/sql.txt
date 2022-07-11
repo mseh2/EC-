@@ -40,4 +40,4 @@ goods_id int(11) not null,
 goods_name varchar(255) not null,
 item_count int(11) default 0,
 total int(11) default 0,
-create_at datetime not null);
+created_at datetime not null);

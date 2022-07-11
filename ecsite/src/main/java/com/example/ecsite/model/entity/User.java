@@ -28,18 +28,6 @@ public class User {
 	@Column(name = "is_admin")
 	private int isAdmin;
 
-	public User() {
-	}
-
-	public User(long id, String userName, String password, String fullName, int isAdmin) {
-		super();
-		this.id = id;
-		this.userName = userName;
-		this.password = password;
-		this.fullName = fullName;
-		this.isAdmin = isAdmin;
-	}
-
 	public long getId() {
 		return id;
 	}

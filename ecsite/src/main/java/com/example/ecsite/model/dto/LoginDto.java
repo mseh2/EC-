@@ -4,7 +4,7 @@ import com.example.ecsite.model.entity.User;
 
 public class LoginDto {
 
-	private long Id;
+	private long id;
 	private String userName;
 	private String password;
 	private String fullName;
@@ -13,25 +13,25 @@ public class LoginDto {
 	}
 
 	public LoginDto(User user) {
-		this.Id = user.getId();
+		this.id = user.getId();
 		this.userName = user.getUserName();
 		this.password = user.getPassword();
 		this.fullName = user.getFullName();
 	}
 	
 	public LoginDto(long Id, String userName, String password, String fullName) {
-		this.Id = Id;
+		this.id = Id;
 		this.userName = userName;
 		this.password = password;
 		this.fullName = fullName;
 	}
 
 	public long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getUserName() {

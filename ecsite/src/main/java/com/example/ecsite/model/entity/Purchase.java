@@ -1,6 +1,8 @@
 package com.example.ecsite.model.entity;
 
-import java.security.Timestamp;
+
+
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,12 +39,10 @@ public class Purchase {
 	private Timestamp createdAt;
 
 	public Purchase() {
-		super();
 	}
 
 	public Purchase(long id, long userId, long goodsId, String goodsName, long itemCount, long total,
 			Timestamp createdAt) {
-		super();
 		this.id = id;
 		this.userId = userId;
 		this.goodsId = goodsId;
